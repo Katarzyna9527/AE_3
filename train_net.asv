@@ -18,10 +18,10 @@ function [net]= train_net(train_set,labels,hidden_neurons_count)
     rand('state',sum(100*clock));           %inicjalizacja generatora liczb 
                                             %pseudolosowych
     %inicjalizacja wag sieci
-    net.IW{1,1} = random('Uniform',-0.15,0.15,hidden_neurons_count,1); 
-    net.LW{2,1} = random('Uniform',-0.15,0.15,1,hidden_neurons_count);
-    net.b{1,1} = random('Uniform',-0.15,0.15,hidden_neurons_count,1);
-    net.b{2,1} = random('Uniform',-0.15,0.15,1,1);
+     net.IW{1,1} = random('Uniform',-0.15,0.15,4,1); 
+     net.LW{2,1} = random('Uniform',-0.15,0.15,1,4);
+    net.b{1,1} = random('Uniform',-0.15,0.15,4,1);
+    net.b{2,1} = 0;
     net.trainFcn = 'trainlm';
     net.trainParam.goal = 0.000001;             %warunek stopu - poziom b³êdu
     net.trainParam.epochs = 200;            %maksymalna liczba epok

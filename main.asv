@@ -48,23 +48,6 @@ blad_train = 0;
 % blad_train = blad_train/15
 % blad_test = blad_test/15
 
-% x = test(1,:);
-% y = test(2,:);
-% plot(x,y,'o',...
-%     'MarkerSize',4,...
-%     'MarkerEdgeColor',[0.1,0.1,0.1],...
-%     'MarkerFaceColor','m');
-% xlabel('x');
-% ylabel('y');
-% hold on
-% liczba_neuronow_ukrytych=8;
-% [net]=train_net(train(1,:)',train(2,:)',liczba_neuronow_ukrytych);
-% Y_test = sim(net,test(1,:));
-% Y_test_rzeczywiste = test(2,:);
-% blad_test = blad_test + sum((Y_test-Y_test_rzeczywiste).^2);
-% plot(test(1,:),Y_test,'LineWidth',3);
-% hold on
-
 x = train(1,:);
 y = train(2,:);
 plot(x,y,'o',...
@@ -76,8 +59,8 @@ ylabel('y');
 hold on
 liczba_neuronow_ukrytych=8;
 [net]=train_net(train(1,:)',train(2,:)',liczba_neuronow_ukrytych);
-Y_train = sim(net,train(1,:));
-Y_train_rzeczywiste = train(2,:);
-blad_train = blad_train + sum((Y_train-Y_train_rzeczywiste).^2);
-plot(train(1,:),Y_train,'LineWidth',3);
+Y_train = sim(net,test(1,:));
+Y_train_rzeczywiste = test(2,:);
+blad_train = blad_train + sum((Y_train-Y_test_rzeczywiste).^2)
+plot(test(1,:),Y_train,'LineWidth',3);
 hold on
