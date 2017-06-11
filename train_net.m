@@ -25,7 +25,7 @@ function [net]= train_net(train_set,labels,hidden_neurons_count)
     net.trainFcn = 'trainlm';
     net.trainParam.goal = 0.000001;             %warunek stopu - poziom b³êdu
     net.trainParam.epochs = 200;            %maksymalna liczba epok
-    net.trainParam.showWindow = false;      %nie pokazywaæ okna z wykresami
+    net.trainParam.showWindow = true;      %nie pokazywaæ okna z wykresami
    
     net=train(net,train_set',labels');      %uczenie sieci
     

@@ -81,3 +81,5 @@ Y_train_rzeczywiste = train(2,:);
 blad_train = blad_train + sum((Y_train-Y_train_rzeczywiste).^2);
 plot(train(1,:),Y_train,'LineWidth',3);
 hold on
+view(net)
+
